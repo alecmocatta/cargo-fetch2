@@ -1,0 +1,15 @@
+[package]
+name = "cargo-fetch2"
+version = "0.1.0"
+license = "MIT OR Apache-2.0"
+authors = ["Alec Mocatta <alec@mocatta.net>"]
+categories = ["development-tools"]
+keywords = ["cargo", "fetch", "fetch2"]
+description = """
+A replacement for `cargo fetch` that works.
+"""
+repository = "https://github.com/alecmocatta/cargo-fetch2"
+homepage = "https://github.com/alecmocatta/cargo-fetch2"
+documentation = "https://docs.rs/cargo-fetch2"
+readme = "README.md"
+edition = "2021"
