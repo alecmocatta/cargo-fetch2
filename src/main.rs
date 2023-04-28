@@ -8,10 +8,11 @@ fn main() {
 		let mut args = env::args().skip(1).collect::<Vec<_>>();
 		let rustc = args.remove(0);
 		// TODO: this is not the most resilient
-		if args[..3] != ["-", "--crate-name", "___"] {
+		if !args.windows(3).any(|x| x == ["-", "--crate-name", "___"]) {
 			process::exit(1);
 		}
 		let mut rustc = Command::new(rustc);
+		rustc.env_remove("CARGO_FETCH2_INTERNAL");
 		rustc.args(args);
 		let exit = rustc.spawn().unwrap().wait().unwrap();
 		if !exit.success() {
